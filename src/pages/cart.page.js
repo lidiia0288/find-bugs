@@ -11,14 +11,14 @@ export class CartPage extends BasePage {
 
     async goToCart() {
         await allure.step("Добавить товар в корзину", async () => {
-            await this.addToCart.click({ timeout: 100000 });
+            await this.addToCart.click();
         });
     }
 
     async goToUpdate() {
         await allure.step("Изменить количество единиц товара в корзине", async () => {
-            await this.changeQuantity.dblclick({ timeout: 100000 });
-            await this.updateQuantity.click({ timeout: 100000 });
+            await this.changeQuantity.dblclick();
+            await this.updateQuantity.click();
         });
     }
 }

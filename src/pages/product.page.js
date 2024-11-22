@@ -13,26 +13,26 @@ export class ProductPage extends BasePage {
 
     async goToChange () {
         await allure.step ("Изменить валюту в карточке продукта", async () => {
-        await this.changeCurrency.selectOption('GBP', { timeout: 60000});
+        await this.changeCurrency.selectOption('GBP');
     });
     }
 
     async goToWriteComment () {
         await allure.step ("Написать комментарий", async () => {
-        await this.postComment.fill('new comment', { timeout: 60000});
+        await this.postComment.fill('new comment');
     });
     }
 
     async goToWritePersonalData () {
         await allure.step ("Указать имя и email", async () => {
-        await this.postName.fill('Lidiia', { timeout: 60000});
-        await this.postEmail.fill('lidi88@ya.ru', { timeout: 60000});
+        await this.postName.fill('Lidiia');
+        await this.postEmail.fill('lidi88@ya.ru');
     });
     }
 
     async goToPost () {
         await allure.step ("Опубликовать комментарий", async () => {
-        await this.postButton.click({ timeout: 60000});
+        await this.postButton.click();
         
     });
     }
