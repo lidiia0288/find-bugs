@@ -10,8 +10,8 @@ export class ExpectedPage extends BasePage {
 
     async goToExpect () {
         await allure.step ("На главной странице отобразилась информация о найденном баге", async () => {
-        await expect(this.resultFrame).toBeVisible({ timeout: 80000 });
-        await expect(this.resultFrame).toContainText('In this bug', { timeout: 80000 });
+        await expect(this.resultFrame).toBeVisible();
+        await expect(this.resultFrame).toContainText('In this bug');
     });
     }
 
