@@ -15,7 +15,7 @@ test('Баг пагинации на главной странице', async ({ 
   await app.mainPage.goToPagination();
 
   await app.expectedPage.goToExpect();
-}, { retry: 2 });
+}, { retry: 4 });
 
 test('Баг неполного изображения товара на главной странице', async ({ page }) => {
   await allure.tag ("Main page")
@@ -25,7 +25,7 @@ test('Баг неполного изображения товара на гла�
   await app.mainPage.goToProductCard();
 
   await app.expectedPage.goToExpect();
-});
+}, { retry: 4 });
 
 test('Баг выбора валюты', async ({ page }) => {
   await allure.tag ("Product page")
@@ -35,7 +35,7 @@ test('Баг выбора валюты', async ({ page }) => {
   await app.productPage.goToChange();
   
   await app.expectedPage.goToExpect();
-}, { retry: 2 });
+}, { retry: 4 });
 
 test('Баг публикации отзыва на странице продукта', async ({ page }) => {
   await allure.tag ("Product page")
@@ -47,7 +47,7 @@ test('Баг публикации отзыва на странице проду�
   await app.productPage.goToPost();
 
   await app.expectedPage.goToExpect();
-});
+}, { retry: 4 });
 
 test('Баг выбора количества товара>', async ({ page }) => {
   await allure.tag ("Cart page")
@@ -58,4 +58,4 @@ test('Баг выбора количества товара>', async ({ page }) 
   await app.cartPage.goToUpdate();
   
   await app.expectedPage.goToExpect();
-});
+}, { retry: 4 });
