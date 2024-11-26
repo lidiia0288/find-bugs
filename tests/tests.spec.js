@@ -59,4 +59,5 @@ test('Баг выбора количества товара>', async ({ page }) 
   await app.cartPage.goToUpdate();
   
   expect(await app.expectedPage.goToExpect('In this bug'));
-});
+
+  });
