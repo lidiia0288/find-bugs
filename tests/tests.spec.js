@@ -37,6 +37,7 @@ test('Баг выбора валюты', async ({ page }) => {
   expect(await app.expectedPage.goToFindText);
 }, { retry: 2 });
 
+
 test('Баг публикации отзыва на странице продукта', async ({ page }) => {
   await allure.tag ("Product page")
   app = new App(page);
@@ -45,6 +46,7 @@ test('Баг публикации отзыва на странице проду�
   await app.productPage.goToWriteComment();
   await app.productPage.goToWritePersonalData();
   await app.productPage.goToPost();
+
 
   expect(await app.expectedPage.goToFindText);
 });
@@ -57,5 +59,7 @@ test('Баг выбора количества товара>', async ({ page }) 
   await app.cartPage.goToCart();
   await app.cartPage.goToUpdate();
   
+
   expect(await app.expectedPage.goToExpect);
 });
+
