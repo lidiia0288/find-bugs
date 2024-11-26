@@ -48,7 +48,7 @@ test('Баг публикации отзыва на странице проду�
   await app.productPage.goToPost();
 
   expect(await app.expectedPage.goToFindText('You found a crash bug'));
-
+});
 
 test('Баг выбора количества товара>', async ({ page }) => {
   await allure.tag ("Cart page")
@@ -59,5 +59,4 @@ test('Баг выбора количества товара>', async ({ page }) 
   await app.cartPage.goToUpdate();
   
   expect(await app.expectedPage.goToExpect('In this bug'));
-
-  });
+});
