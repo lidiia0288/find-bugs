@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import * as allure from "allure-js-commons";
 import {App} from '../src/pages/app.page'
 
@@ -14,8 +14,8 @@ test('Баг пагинации на главной странице', async ({ 
   await app.mainPage.open(url);
   await app.mainPage.goToPagination();
 
-  await app.expectedPage.goToExpect();
-}, { retry: 2 });
+  expect(await app.expectedPage.goToFindText);
+});
 
 test('Баг неполного изображения товара на главной странице', async ({ page }) => {
   await allure.tag ("Main page")
@@ -24,7 +24,7 @@ test('Баг неполного изображения товара на гла�
   await app.mainPage.open(url);
   await app.mainPage.goToProductCard();
 
-  await app.expectedPage.goToExpect();
+  expect(await app.expectedPage.goToExpect);
 });
 
 test('Баг выбора валюты', async ({ page }) => {
@@ -34,7 +34,7 @@ test('Баг выбора валюты', async ({ page }) => {
   await app.mainPage.open(productUrl);
   await app.productPage.goToChange();
   
-  await app.expectedPage.goToExpect();
+  expect(await app.expectedPage.goToFindText);
 }, { retry: 2 });
 
 test('Баг публикации отзыва на странице продукта', async ({ page }) => {
@@ -46,7 +46,7 @@ test('Баг публикации отзыва на странице проду�
   await app.productPage.goToWritePersonalData();
   await app.productPage.goToPost();
 
-  await app.expectedPage.goToExpect();
+  expect(await app.expectedPage.goToFindText);
 });
 
 test('Баг выбора количества товара>', async ({ page }) => {
@@ -57,5 +57,5 @@ test('Баг выбора количества товара>', async ({ page }) 
   await app.cartPage.goToCart();
   await app.cartPage.goToUpdate();
   
-  await app.expectedPage.goToExpect();
+  expect(await app.expectedPage.goToExpect);
 });
