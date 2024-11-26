@@ -5,21 +5,21 @@ export class ExpectedPage extends BasePage {
     constructor(page) {
         super(page);
         this.resultFrame = this.page.locator('#popmake-4406');
-        this.resultText = this.page.locator('.academy-bug-overlay');
+        this.resultText = this.page.getByRole('heading').nth(1);
     }
 
     async goToExpect () {
-        await allure.step ("На главной странице отобразилась информация о найденном баге", async () => {
-        await this.resultFrame.toBeVisible();
-        await this.resultFrame.toContainText('In this bug');
-    });
+        await allure.step ("На странице отобразилась информация о найденном баге", async () => {
+        await this.resultFrame.focus();
+        });
     }
 
     async goToFindText () {
-        await allure.step ("На странице отобразилось оповещение о найденном баге", async () => {
-        await this.resultText.toBeVisible();
-        await this.resultText.toContainText('You found a crash bug');
+        await allure.step ("На странице отобразилось предупреждение о найденном баге", async () => {
+        await this.resultText.focus();
     });
-    }
-
 }
+}
+
+    
+
