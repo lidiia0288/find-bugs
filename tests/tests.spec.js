@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 import * as allure from "allure-js-commons";
 import {App} from '../src/pages/app.page'
 
-const url = ('https://academybugs.com/find-bugs/');
-const productUrl = ('https://academybugs.com/store/dark-grey-jeans/');
+const url = 'https://academybugs.com/find-bugs/';
+const productUrl = 'https://academybugs.com/store/dark-grey-jeans/';
 let app;
 
 
@@ -48,7 +48,7 @@ test('Баг публикации отзыва на странице проду�
   await app.productPage.goToPost();
 
   expect(await app.expectedPage.goToFindText('You found a crash bug'));
-
+});
 
 test('Баг выбора количества товара>', async ({ page }) => {
   await allure.tag ("Cart page")
