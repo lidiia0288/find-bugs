@@ -4,6 +4,8 @@ import {App} from '../src/pages/app.page'
 
 const url = 'https://academybugs.com/find-bugs/';
 const productUrl = 'https://academybugs.com/store/dark-grey-jeans/';
+const mistakeFrame = 'You found a crash bug';
+const mistakeAlarm = 'In this bug';
 let app;
 
 
@@ -14,7 +16,7 @@ test('Баг пагинации на главной странице', async ({ 
   await app.mainPage.open(url);
   await app.mainPage.goToPagination();
 
-  expect(await app.expectedPage.goToFindText('You found a crash bug'));
+  expect(await app.errorPage.goToErrorFrame(mistakeFrame));
 });
 
 test('Баг неполного изображения товара на главной странице', async ({ page }) => {
@@ -24,7 +26,7 @@ test('Баг неполного изображения товара на гла�
   await app.mainPage.open(url);
   await app.mainPage.goToProductCard();
 
-  expect(await app.expectedPage.goToExpect('In this bug'));
+  expect(await app.errorPage.goToError(mistakeAlarm));
 });
 
 test('Баг выбора валюты', async ({ page }) => {
@@ -34,7 +36,7 @@ test('Баг выбора валюты', async ({ page }) => {
   await app.mainPage.open(productUrl);
   await app.productPage.goToChange();
   
-  expect(await app.expectedPage.goToFindText('You found a crash bug'));
+  expect(await app.errorPage.goToErrorFrame(mistakeFrame));
 });
 
 
@@ -47,7 +49,7 @@ test('Баг публикации отзыва на странице проду�
   await app.productPage.goToWritePersonalData();
   await app.productPage.goToPost();
 
-  expect(await app.expectedPage.goToFindText('You found a crash bug'));
+  expect(await app.errorPage.goToErrorFrame(mistakeFrame));
 });
 
 test('Баг выбора количества товара>', async ({ page }) => {
@@ -58,6 +60,6 @@ test('Баг выбора количества товара>', async ({ page }) 
   await app.cartPage.goToCart();
   await app.cartPage.goToUpdate();
   
-  expect(await app.expectedPage.goToExpect('In this bug'));
+  expect(await app.errorPage.goToError(mistakeAlarm));
 });
 
