@@ -6,6 +6,8 @@ export class MainPage extends BasePage {
         super(page);
         this.quantityProducts = this.page.getByRole('link', { name: '50' });
         this.productCard = this.page.locator('#ec_product_image_effect_4281370');
+        this.errorFrame = this.page.locator('#popmake-4406');
+        this.errorAlarm = this.page.locator ('.academy-bug-overlay');
     }
 
     async goToPagination () {
