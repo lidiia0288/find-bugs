@@ -1,6 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","9968","Баг выбора валюты","chromium","Mon Mar 17 00:42:44 GMT 2025","passed","Mon Mar 17 00:42:54 GMT 2025","","tests.spec.js","",""
-"","6438","Баг пагинации на главной странице","chromium","Mon Mar 17 00:41:04 GMT 2025","failed","Mon Mar 17 00:41:11 GMT 2025","","tests.spec.js","",""
-"","5964","Баг выбора количества товара>","chromium","Mon Mar 17 00:44:26 GMT 2025","passed","Mon Mar 17 00:44:32 GMT 2025","","tests.spec.js","",""
-"","30011","Баг публикации отзыва на странице продукта","chromium","Mon Mar 17 00:43:55 GMT 2025","broken","Mon Mar 17 00:44:25 GMT 2025","","tests.spec.js","",""
-"","30011","Баг неполного изображения товара на главной странице","chromium","Mon Mar 17 00:42:13 GMT 2025","broken","Mon Mar 17 00:42:43 GMT 2025","","tests.spec.js","",""
